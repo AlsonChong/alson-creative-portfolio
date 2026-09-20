@@ -8,9 +8,9 @@ import projectFashion from "@/assets/project-fashion.jpg";
 import projectOutdoor from "@/assets/project-outdoor.jpg";
 import projectTravel from "@/assets/project-travel.jpg";
 
-const title = "Alson Choong — Expert Photographer & Visual Storyteller";
+const title = "Alson Chong — Expert Photographer & Visual Storyteller";
 const description =
-  "Alson Choong is an expert commercial and editorial photographer crafting cinematic campaigns, portraits and films for brands worldwide.";
+  "Alson Chong is an expert commercial and editorial photographer crafting cinematic campaigns, portraits and films for brands worldwide.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -128,7 +128,7 @@ function Index() {
               style={{ animationDelay: "300ms" }}
             >
               <p>
-                hello, I'm <strong className="font-semibold text-foreground">Alson Choong</strong> —
+                hello, I'm <strong className="font-semibold text-foreground">Alson Chong</strong> —
                 an expert photographer and director.
               </p>
               <p>I shoot campaigns, portraits and films for brands worldwide.</p>
@@ -159,7 +159,7 @@ function Index() {
               <img
                 key={i}
                 src={p.src}
-                alt="Selected photography by Alson Choong"
+                alt="Selected photography by Alson Chong"
                 loading="lazy"
                 width={1280}
                 height={960}
@@ -273,7 +273,7 @@ function Index() {
           <Reveal>
             <img
               src={heroPortrait}
-              alt="Alson Choong in the studio"
+              alt="Alson Chong in the studio"
               loading="lazy"
               width={1280}
               height={1600}
@@ -395,7 +395,7 @@ function Index() {
 
       <footer className="border-t border-border">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-10 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
-          <span className="font-semibold text-foreground">Alson Choong</span>
+          <span className="font-semibold text-foreground">Alson Chong</span>
           <div className="flex gap-6">
             <a href="#work" className="transition-colors hover:text-foreground">
               Instagram

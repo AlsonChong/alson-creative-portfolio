@@ -14,12 +14,12 @@ export function Nav() {
         <a href="#top" className="flex items-center gap-2 pr-3">
           <img
             src={avatar}
-            alt="Alson Choong"
+            alt="Alson Chong"
             width={1280}
             height={1600}
             className="h-7 w-7 rounded-full object-cover"
           />
-          <span className="text-sm font-medium">alsonchoong</span>
+          <span className="text-sm font-medium">alsonchong</span>
         </a>
         <div className="hidden items-center sm:flex">
           {links.map((l) => (
