@@ -113,15 +113,15 @@ function Index() {
               className="animate-fade-up mt-7 text-[clamp(2.75rem,8vw,5rem)] font-semibold leading-[1.02] tracking-[-0.03em]"
               style={{ animationDelay: "120ms" }}
             >
-              <span className="text-muted-foreground">Light,</span>
+              <span className="text-muted-foreground">I Tell Stories,</span>
               <br />
-              patience, story
+              with visual passions 
             </h1>
             <p
               className="animate-fade-up mt-8 text-sm font-semibold uppercase tracking-wide"
               style={{ animationDelay: "220ms" }}
             >
-              Perhaps today ✨
+              DOCUMENT YOUR STORY WITH ME ✨
             </p>
             <div
               className="animate-fade-up mt-5 space-y-4 text-base leading-relaxed text-muted-foreground"
@@ -131,7 +131,7 @@ function Index() {
                 hello, I'm <strong className="font-semibold text-foreground">Alson Chong</strong> —
                 an expert photographer and director.
               </p>
-              <p>I shoot campaigns, portraits and films for brands worldwide.</p>
+              <p>I shoot campaigns, reel contents and films for events from <strong className="font-semibold text-foreground">Clubs & Societies</strong> to <strong className="font-semibold text-foreground">Student Teams</strong>.</p>
             </div>
             <a
               href="#contact"
