@@ -10,7 +10,7 @@ import projectTravel from "@/assets/project-travel.jpg";
 
 const title = "Alson Chong — Expert Photographer & Visual Storyteller";
 const description =
-  "Alson Chong is an expert commercial and editorial photographer crafting cinematic campaigns, portraits and films for brands worldwide.";
+  "Alson Chong is an expert commercial and editorial photographer crafting cinematic campaigns, portraits and films for university clubs & student teams.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
