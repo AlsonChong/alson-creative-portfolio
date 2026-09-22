@@ -1,5 +1,7 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
+import { Faq } from "@/components/site/Faq";
+import { HoverFooter } from "@/components/site/HoverFooter";
 import { Reveal } from "@/components/site/Reveal";
 import heroPortrait from "@/assets/hero-portrait.jpg";
 import { projects } from "@/data/projects";
@@ -52,11 +54,13 @@ function Index() {
               style={{ animationDelay: "300ms" }}
             >
               <p>
-                Hi, I&apos;m{" "}
-                <strong className="font-semibold text-foreground">Alson Chong</strong> — a cinematic mixed-media creative based in Melbourne, Australia.
+                Hi, I&apos;m <strong className="font-semibold text-foreground">Alson Chong</strong>{" "}
+                — a cinematic mixed-media creative based in Melbourne, Australia.
               </p>
               <p>
-                Specialised in creating and documenting event stories from <strong className="font-semibold text-foreground">clubs & societies</strong> to <strong className="font-semibold text-foreground">Student teams</strong>.
+                Specialised in creating and documenting event stories from{" "}
+                <strong className="font-semibold text-foreground">clubs & societies</strong> to{" "}
+                <strong className="font-semibold text-foreground">Student teams</strong>.
               </p>
             </div>
             <a
@@ -202,6 +206,40 @@ function Index() {
           </div>
         </div>
       </section>
+      <section id="faq" className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+        <div className="grid gap-12 md:grid-cols-[0.75fr_1.25fr] md:gap-20">
+          <Reveal>
+            <p className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+              FAQ
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold leading-[1.02] tracking-[-0.03em] md:text-5xl">
+              Your questions
+              <br />
+              answered.
+            </h2>
+          </Reveal>
+          <div>
+            <Reveal delay={100}>
+              <Faq />
+            </Reveal>
+            <Reveal delay={180}>
+              <a
+                href="#contact"
+                className="mt-10 inline-flex items-center gap-3 text-sm font-medium transition-colors hover:text-muted-foreground"
+              >
+                <span>
+                  Still have a question?
+                  <br />
+                  Let&apos;s talk.
+                </span>
+                <span aria-hidden="true" className="text-lg">
+                  →
+                </span>
+              </a>
+            </Reveal>
+          </div>
+        </div>
+      </section>
       <section id="contact" className="mx-auto max-w-6xl px-6 py-24 md:py-32">
         <Reveal>
           <div className="rounded-3xl border border-border bg-card p-8 shadow-card md:p-12">
@@ -250,23 +288,7 @@ function Index() {
           </div>
         </Reveal>
       </section>
-      <footer className="border-t border-border">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-10 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
-          <span className="font-semibold text-foreground">Alson Chong</span>
-          <div className="flex gap-6">
-            <a href="#work" className="transition-colors hover:text-foreground">
-              Instagram
-            </a>
-            <a href="#work" className="transition-colors hover:text-foreground">
-              YouTube
-            </a>
-            <a href="#work" className="transition-colors hover:text-foreground">
-              Behance
-            </a>
-          </div>
-          <span>© {new Date().getFullYear()} All rights reserved</span>
-        </div>
-      </footer>
+      <HoverFooter />
     </div>
   );
 }

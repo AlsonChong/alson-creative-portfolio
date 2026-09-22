@@ -1,55 +1,68 @@
-import { useState } from "react";
+import { useId, useState } from "react";
 
 const faqs = [
   {
-    q: "What kind of photography do you specialise in?",
-    a: "Commercial and editorial work — campaigns, portraits, automotive, fashion and travel storytelling. Every project starts with the story, not the gear.",
+    question: "What kind of work do you create?",
+    answer:
+      "I work across photography, videography, visual storytelling and creative production. I enjoy moving between different mediums depending on what the story needs.",
   },
   {
-    q: "Do you travel for shoots?",
-    a: "Yes. I shoot worldwide and handle my own travel logistics. Projects outside my home base include a simple travel line in the quote.",
+    question: "What can I help with?",
+    answer:
+      "Photography, videography, event coverage, campaign content, social media visuals, short-form video and creative production.",
   },
   {
-    q: "What does a typical project cost?",
-    a: "Day rates start at a fixed creative fee and scale with crew, licensing and post-production. Send your brief and you'll get an itemised quote within 48 hours.",
+    question: "Do you work across both photo and video?",
+    answer:
+      "Yes. Photography and video are both core parts of my creative practice, and I often combine them within the same project.",
   },
   {
-    q: "How long until I receive the images?",
-    a: "Previews within 48 hours, and the full retouched delivery in 7 to 14 days depending on volume.",
+    question: "What is your creative process?",
+    answer:
+      "I usually start by understanding the purpose and story behind a project, then move into planning, shooting and post-production. I like keeping the process flexible enough to respond to the moment while still having a clear visual direction.",
   },
   {
-    q: "Do you also shoot video?",
-    a: "Yes — I direct and edit short films and social cutdowns, so one shoot can deliver both stills and motion.",
+    question: "Do you take on freelance or collaborative projects?",
+    answer:
+      "Yes. I am open to creative collaborations, freelance projects and opportunities where I can contribute through photography, videography or visual storytelling.",
   },
   {
-    q: "Who owns the images?",
-    a: "I keep copyright and grant the usage licence agreed in the contract. Broader or exclusive rights can always be arranged.",
-  },
-  {
-    q: "How do we get started?",
-    a: "Send a short note with your dates, location and the idea. We'll jump on a call and shape it from there.",
+    question: "How can I work with you?",
+    answer:
+      "Send me a message through the contact section with a brief description of your project, what you need and your expected timeline. From there, we can discuss the best way to approach it.",
   },
 ];
 
 export function Faq() {
-  const [open, setOpen] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const idPrefix = useId();
 
   return (
-    <div className="space-y-3">
-      {faqs.map((f, i) => {
-        const isOpen = open === i;
+    <div className="border-b border-border">
+      {faqs.map((faq, index) => {
+        const isOpen = openIndex === index;
+        const triggerId = `${idPrefix}-trigger-${index}`;
+        const panelId = `${idPrefix}-panel-${index}`;
+
         return (
-          <div
-            key={f.q}
-            className="overflow-hidden rounded-2xl border border-border bg-card transition-all duration-500"
-          >
+          <div key={faq.question} className="border-t border-border">
             <button
-              onClick={() => setOpen(isOpen ? null : i)}
-              className="flex w-full items-center justify-between gap-6 px-6 py-5 text-left"
+              id={triggerId}
+              type="button"
+              aria-expanded={isOpen}
+              aria-controls={panelId}
+              onClick={() => setOpenIndex(isOpen ? null : index)}
+              className="grid w-full grid-cols-[2rem_minmax(0,1fr)_auto] items-center gap-3 py-5 text-left outline-none transition-colors duration-200 hover:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset sm:grid-cols-[3rem_minmax(0,1fr)_auto] sm:gap-5 sm:py-6"
             >
-              <span className="text-base font-medium sm:text-lg">{f.q}</span>
+              <span className="text-sm tabular-nums text-muted-foreground">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span className="text-lg font-medium tracking-[-0.02em] sm:text-xl">
+                {faq.question}
+              </span>
               <span
-                className={`text-xl text-muted-foreground transition-transform duration-500 ${
+                aria-hidden="true"
+                className={`text-2xl font-light leading-none text-muted-foreground transition-transform duration-300 ${
                   isOpen ? "rotate-45" : ""
                 }`}
               >
@@ -57,13 +70,18 @@ export function Faq() {
               </span>
             </button>
             <div
-              className={`grid transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+              id={panelId}
+              role="region"
+              aria-labelledby={triggerId}
+              className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
                 isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
               }`}
             >
-              <p className="overflow-hidden px-6 text-sm leading-relaxed text-muted-foreground">
-                <span className="block pb-5">{f.a}</span>
-              </p>
+              <div className="min-h-0 overflow-hidden">
+                <p className="max-w-2xl pb-6 pl-8 text-sm leading-relaxed text-muted-foreground sm:pl-12 sm:text-base">
+                  {faq.answer}
+                </p>
+              </div>
             </div>
           </div>
         );
