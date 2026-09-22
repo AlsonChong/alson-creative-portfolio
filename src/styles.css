@@ -199,6 +199,108 @@
   box-shadow: var(--shadow-card);
 }
 
+/* A single, floating material for the site's persistent navigation layer. */
+.liquid-nav {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid oklch(1 0 0 / 62%);
+  background:
+    linear-gradient(
+      118deg,
+      oklch(1 0 0 / 66%) 0%,
+      oklch(1 0 0 / 35%) 48%,
+      oklch(0.91 0.025 250 / 34%) 100%
+    ),
+    oklch(0.97 0.003 90 / 42%);
+  box-shadow:
+    0 18px 42px -22px oklch(0.2 0.005 260 / 48%),
+    0 5px 14px -10px oklch(0.2 0.005 260 / 24%),
+    inset 0 1px 0 oklch(1 0 0 / 76%),
+    inset 0 -1px 1px oklch(0.2 0.005 260 / 10%);
+  -webkit-backdrop-filter: blur(24px) saturate(165%);
+  backdrop-filter: blur(24px) saturate(165%);
+}
+
+.liquid-nav::before {
+  position: absolute;
+  z-index: -1;
+  top: -80%;
+  left: -14%;
+  width: 68%;
+  height: 150%;
+  content: "";
+  border-radius: 999px;
+  background: linear-gradient(108deg, oklch(1 0 0 / 58%), oklch(1 0 0 / 0%));
+  filter: blur(10px);
+  opacity: 0.8;
+  pointer-events: none;
+  transform: rotate(-12deg);
+}
+
+.liquid-nav > * {
+  position: relative;
+  z-index: 1;
+}
+
+.liquid-nav-link,
+.liquid-nav-cta {
+  transition:
+    background-color 220ms ease,
+    box-shadow 220ms ease,
+    color 220ms ease,
+    transform 220ms ease;
+}
+
+.liquid-nav-link:hover {
+  background: oklch(1 0 0 / 38%);
+  box-shadow: inset 0 1px 0 oklch(1 0 0 / 52%);
+  color: var(--foreground);
+}
+
+.liquid-nav-link:focus-visible,
+.liquid-nav-cta:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.liquid-nav-cta {
+  background: linear-gradient(135deg, oklch(0.29 0.012 260), oklch(0.16 0.006 260));
+  box-shadow:
+    0 7px 16px -10px oklch(0.2 0.005 260 / 75%),
+    inset 0 1px 0 oklch(1 0 0 / 21%);
+}
+
+.liquid-nav-cta:hover {
+  box-shadow:
+    0 10px 20px -10px oklch(0.2 0.005 260 / 78%),
+    inset 0 1px 0 oklch(1 0 0 / 30%);
+  transform: translateY(-1px) scale(1.025);
+}
+
+.dark .liquid-nav {
+  border-color: oklch(1 0 0 / 18%);
+  background:
+    linear-gradient(
+      118deg,
+      oklch(0.45 0.02 260 / 48%) 0%,
+      oklch(0.2 0.005 260 / 48%) 58%,
+      oklch(0.3 0.03 250 / 46%) 100%
+    ),
+    oklch(0.16 0.005 260 / 55%);
+  box-shadow:
+    0 18px 42px -22px oklch(0 0 0 / 75%),
+    inset 0 1px 0 oklch(1 0 0 / 16%),
+    inset 0 -1px 1px oklch(0 0 0 / 25%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .liquid-nav-link,
+  .liquid-nav-cta {
+    transition: none;
+  }
+}
+
 @keyframes fade-up {
   from {
     opacity: 0;
