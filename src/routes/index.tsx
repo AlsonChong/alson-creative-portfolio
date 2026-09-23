@@ -3,7 +3,7 @@ import { Nav } from "@/components/site/Nav";
 import { Faq } from "@/components/site/Faq";
 import { HoverFooter } from "@/components/site/HoverFooter";
 import { Reveal } from "@/components/site/Reveal";
-import heroPortrait from "@/assets/hero-portrait.jpg";
+import heroPortrait from "@/assets/DSC_8290.jpg";
 import { projects } from "@/data/projects";
 
 const title = "Alson Chong — Photographer, Filmmaker & Visual Storyteller";
@@ -58,7 +58,7 @@ function Index() {
                 — a cinematic mixed-media creative based in Melbourne, Australia.
               </p>
               <p>
-                Specialised in creating and documenting event stories from{" "}
+                Specialised in creating, marketing & documenting event stories from{" "}
                 <strong className="font-semibold text-foreground">clubs & societies</strong> to{" "}
                 <strong className="font-semibold text-foreground">Student teams</strong>.
               </p>
@@ -110,11 +110,11 @@ function Index() {
             Selected work
           </p>
           <h2 className="mt-3 text-3xl font-semibold tracking-[-0.03em] md:text-5xl">
-            A creative journey in three chapters.
+            My creative journey in Publicity and Media coordination
           </h2>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
-            From high-school film experiments, through student-community storytelling, to campaigns
-            for Monash Motorsport.
+            From high-school film competitions and videography roles, through student council
+            marketing & storytelling, to car launch campaigns for Monash Motorsport.
           </p>
         </Reveal>
         <div className="mt-12 grid gap-8 md:grid-cols-2">

@@ -19,7 +19,7 @@ const faqs = [
   {
     question: "What is your creative process?",
     answer:
-      "I usually start by understanding the purpose and story behind a project, then move into planning, shooting and post-production. I like keeping the process flexible enough to respond to the moment while still having a clear visual direction.",
+      "I usually start by making myself to understand and fall in love towards the project, then move into planning, shooting and post-production. I like keeping visual direction and theme approach before starting the planning.",
   },
   {
     question: "Do you take on freelance or collaborative projects?",
@@ -29,7 +29,12 @@ const faqs = [
   {
     question: "How can I work with you?",
     answer:
-      "Send me a message through the contact section with a brief description of your project, what you need and your expected timeline. From there, we can discuss the best way to approach it.",
+      "Send me a message through the contact section or through @alsonc.1 on instagram with a brief description of your project, what you need and your expected timeline. From there, we can discuss the best way to approach it.",
+  },
+  {
+    question: "What equipment and editing software are you familiar with?",
+    answer:
+      "I am experienced with any Sony and Fujifilm cameras but specifically Sony Full Frame cameras, For editing software I primarily use Premiere Pro for editing and DaVinci for Color Grading if needed.",
   },
 ];
 
