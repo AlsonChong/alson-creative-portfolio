@@ -1,4 +1,4 @@
-import avatar from "@/assets/DSC_8290.JPG";
+import avatar from "@/assets/Own_avatar.jpg";
 import { Link } from "@tanstack/react-router";
 
 const links = [
