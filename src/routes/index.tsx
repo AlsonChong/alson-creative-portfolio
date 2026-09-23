@@ -3,7 +3,7 @@ import { Nav } from "@/components/site/Nav";
 import { Faq } from "@/components/site/Faq";
 import { HoverFooter } from "@/components/site/HoverFooter";
 import { Reveal } from "@/components/site/Reveal";
-import heroPortrait from "@/assets/DSC_8290.jpg";
+import heroPortrait from "@/assets/DSC_8290.JPG";
 import { projects } from "@/data/projects";
 
 const title = "Alson Chong — Photographer, Filmmaker & Visual Storyteller";
